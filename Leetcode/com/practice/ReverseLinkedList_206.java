@@ -14,13 +14,17 @@ public class ReverseLinkedList_206 {
 		node2.next = node3;
 		node3.next = node4;
 		node4.next = null;
-		
-		new ListNode().display(reverseList(node1));
+
+		ReverseLinkedList_206 rl = new ReverseLinkedList_206();
+		rl.display(rl.reverseList(node1));
+		// rl.display(rl.reverseLinkedListRecursive(node1));
 
 	}
 
-	//Iterative Approach
-	static ListNode reverseList(ListNode head) {
+	// Iterative Approach
+	// O(n) - time complexity
+	// O(1) - space complexity
+	ListNode reverseList(ListNode head) {
 		ListNode current = head;
 		ListNode prev = null;
 		ListNode nxt = null;
@@ -35,4 +39,30 @@ public class ReverseLinkedList_206 {
 
 	}
 
+	// Recursive Approach
+	// O(n) - time complexity
+	// O(n) - space complexity - implicit stack space due to recursion
+
+	ListNode reverseLinkedListRecursive(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
+		ListNode result = reverseLinkedListRecursive(head.next);
+		head.next.next = head;
+		head.next = null;
+		return result;
+	}
+
+	public void display(ListNode curr) {
+		ListNode head = curr;
+		if (head == null) {
+			System.out.println("Empty Node!");
+		}
+
+		while (head != null) {
+			System.out.println(head.val);
+			head = head.next;
+		}
+		System.out.println();
+
+	}
 }
