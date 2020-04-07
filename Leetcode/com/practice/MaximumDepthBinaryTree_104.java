@@ -3,7 +3,9 @@ package com.practice;
 import com.practice.helper.Node;
 
 public class MaximumDepthBinaryTree_104 {
-	
+
+	// thumb rule = maximum[ maxDepth of left subtree+1 , maxDepth of right
+	// subtree+1] [recursive approach]
 	Node root;
 
 	int maxDepth(Node root) {
@@ -17,8 +19,9 @@ public class MaximumDepthBinaryTree_104 {
 			return (leftDepth + 1);
 		else
 			return (rightDepth + 1);
-
-		// return (root == null)? 0 : Math.max(maxDepth(root.left) +1, maxDepth(root.right)+1);
+		// same solution in a line
+		// return (root == null)? 0 : Math.max(maxDepth(root.left) +1,
+		// maxDepth(root.right)+1);
 	}
 
 	public static void main(String[] args) {

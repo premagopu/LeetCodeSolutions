@@ -1,12 +1,15 @@
 package com.practice;
 
 public class ReverseString_344 {
-
+	
+	// O(n) - time complexity
+	// O(n) - space complexity
+	
 	public static void main(String[] args) {
 		char[] s = { 'h', 'e', 'l', 'l', 'o' };
 		System.out.println(reverseString(s));
 	}
-
+	
 	// in-place reverse string
 	public static char[] reverseString(char[] s) {
 		int j = 0;
