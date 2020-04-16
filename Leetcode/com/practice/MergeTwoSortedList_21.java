@@ -2,7 +2,7 @@ package com.practice;
 
 import com.practice.helper.ListNode;
 
-public class MergeTwoSortedList {
+public class MergeTwoSortedList_21 {
 
 	public static void main(String[] args) {
 		ListNode l1 = new ListNode(1);
