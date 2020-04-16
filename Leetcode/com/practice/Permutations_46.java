@@ -27,12 +27,13 @@ public class Permutations_46 {
 				r.add(i);
 			}
 			result.add(r);
-		}
+		} else {
 
-		for (int i = pos; i < nums.length; i++) {
-			swap(nums, pos, i);
-			permutation(nums, pos + 1, result);
-			swap(nums, pos, i);
+			for (int i = pos; i < nums.length; i++) {
+				swap(nums, pos, i);
+				permutation(nums, pos + 1, result);
+				swap(nums, pos, i);
+			}
 		}
 
 	}
